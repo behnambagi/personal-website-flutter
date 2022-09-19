@@ -2,7 +2,7 @@
 <html>
 
 <head>
-  <base href="/">
+  <base href="$FLUTTER_BASE_HREF">
 
   <meta charset="UTF-8">
   <meta content="IE=Edge" http-equiv="X-UA-Compatible">
@@ -18,8 +18,8 @@
   <meta property="og:title" content="Behnam bagvand">
   <meta property="og:site_name" content="Behnam bagvand">
   <meta property="og:description" content="Behnam bagvand's personal website.">
-  <meta property="og:image" itemprop="image" content="https://www.greaterworks.tech/wp-content/uploads/2020/10/dkb.jpg">
-  <meta property="og:url" content="https://akora-ingdkb.me/">
+  <meta property="og:image" itemprop="image" content="icons/apple-icon-114x114.png">
+  <meta property="og:url" content="https://applance.net/">
   <meta property="og:type" content="website" />
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:site" content="@Mr.bagvand">
@@ -44,13 +44,27 @@
   <meta name="msapplication-TileColor" content="#ffffff">
   <meta name="msapplication-TileImage" content="icons/ms-icon-144x144.png">
   <meta name="theme-color" content="#ffffff">
+  <link rel="stylesheet" type="text/css" href="./styles.css" >
 
   <title>Behnam bagvand</title>
   <link rel="manifest" href="manifest.json">
 </head>
 
-<body>
+<body onload="loadScript()">
+<div class="center">
+  <div style= "display:block;" id="loading">
+    <div class="loader">
+      <span>{</span><span>}</span>
+    </div>
+  </div>
+</div>
   <script>
+       function loadScript(){
+       setTimeout ( function() {
+             document.getElementById("loading")
+             .style.display="none";
+          }, 25000);
+  }
     if ('serviceWorker' in navigator) {
       window.addEventListener('flutter-first-frame', function () {
         navigator.serviceWorker.register('flutter_service_worker.js');
