@@ -1,5 +1,5 @@
 
-# Resume Builder
+# Personal Website
 A web application and online resume that is implemented in Flutter and is fully responsive.
 
 Show some :heart: and :star: the repo to support the project.
